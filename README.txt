@@ -47,6 +47,8 @@ For LibertyBSD 7.8 release prep in one shot, use:
 	sh prepare-release-7.8.sh /usr/src /usr/src/sys /usr/xenocara /usr/ports
 Then sign SHA256 manifests for 7.8 artifacts with:
 	sh sign-release-7.8.sh <base_dir> <packages_dir> <syspatch_dir> <private_keys_dir>
+And verify signatures with:
+	sh verify-release-7.8-signatures.sh <base_dir> <packages_dir> <syspatch_dir> files/keys
 
 If you want liberated OpenBSD sources, but without the LibertyBSD rebranding,
 just skip the *_rebrand.sh scripts and everything should go fine.
