@@ -43,6 +43,9 @@ corresponding source-code, like so:
 	sh xenocara_rebrand.sh /usr/xenocara
 	sh ports_deblob.sh /usr/ports
 
+For LibertyBSD 7.8 release prep in one shot, use:
+	sh prepare-release-7.8.sh /usr/src /usr/src/sys /usr/xenocara /usr/ports
+
 If you want liberated OpenBSD sources, but without the LibertyBSD rebranding,
 just skip the *_rebrand.sh scripts and everything should go fine.
 
