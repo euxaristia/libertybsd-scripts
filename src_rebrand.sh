@@ -89,17 +89,29 @@ rep	"sysctl -n kern.version | sed 1q >" \
 rep "kerninfo.sysname" "\"LibertyBSD\"" libexec/getty/main.c
 
 # Adding LBSD keys
-versions="64 66 67"
 local_key="files/keys/libertybsd-"
 lbsd_key="etc/signify/libertybsd-"
 
+# Use the newest three key generations (previous/current/next release window).
+versions="$(ls ${local_key}*-base.pub 2>/dev/null \
+	| sed 's|.*/libertybsd-||; s|-base\.pub$||' \
+	| sort -nu \
+	| tail -3)"
+
+if test -z "$versions"; then
+	echo "No LibertyBSD base keys found under files/keys/"
+	exit 1
+fi
+
 for ver in $versions; do
-	filecp  ${local_key}${ver}-base.pub \
-		${lbsd_key}${ver}-base.pub
-	filecp  ${local_key}${ver}-pkg.pub \
-		${lbsd_key}${ver}-pkg.pub
-	filecp  ${local_key}${ver}-syspatch.pub \
-		${lbsd_key}${ver}-syspatch.pub
+	for key in base pkg syspatch; do
+		if test ! -f "${local_key}${ver}-${key}.pub"; then
+			echo "Missing key file: ${local_key}${ver}-${key}.pub"
+			exit 1
+		fi
+		filecp "${local_key}${ver}-${key}.pub" \
+			"${lbsd_key}${ver}-${key}.pub"
+	done
 	filedel etc/signify/openbsd-${ver}-fw.pub
 done
 

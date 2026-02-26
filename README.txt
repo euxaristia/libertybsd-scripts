@@ -11,7 +11,7 @@ tarballs. CVS can be used, as well.
 ----------------------------------------
 SCRIPTS
 ----------------------------------------
-There're five scripts here, so here's what they do:
+There are five scripts here. Here's what they do:
 
 	src_deblob.sh	Deblobs main OBSD source of NF FW, references, etc
 	man_deblob.sh	Gets rid of pages with non-free (NF) references

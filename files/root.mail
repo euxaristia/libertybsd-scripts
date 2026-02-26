@@ -3,7 +3,7 @@ Return-Path: root
 Date: May  1 07:59:59 MST 2016
 From: deraadt@do-not-reply.openbsd.org (Theo de Raadt)
 To: root
-Subject: Welcome to [LibertyBSD] 6.6!
+Subject: Welcome to [LibertyBSD] 7.8!
 
 This message attempts to describe the most basic initial questions that a
 system administrator of a [LibertyBSD] box might have.  You are urged to save
@@ -88,5 +88,4 @@ http://www.openbsd.org/donations.html
 http://www.openbsdfoundation.org/donations.html
 
 Now, run free! :)
-
 

@@ -669,8 +669,9 @@ get_responsefile() {
 	# Ask for the installer mode only if auto-detection failed.
 	AI_MODE=$(echo "$_rf" | sed -En 's/^.*(install|upgrade).conf$/\1/p')
 	while [[ -z $AI_MODE ]]; do
-		ask "(I)nstall?"
+		ask "(I)nstall or (U)pgrade?"
 		[[ $resp == [iI]* ]] && AI_MODE=install
+		[[ $resp == [uU]* ]] && AI_MODE=upgrade
 	done
 
 	echo "Fetching $_rf"

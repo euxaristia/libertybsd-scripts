@@ -30,15 +30,15 @@ portdirs="$portdirs security shells sysutils telephony textproc www x11"
 # --------------------------------------
 
 rep	"ftp.openbsd.org/pub/OpenBSD/snapshots/i386/cd52.iso" \
-	"ftp.libertybsd.net/pub/LibertyBSD/snapshots/i386/cd64.iso" \
+	"ftp.libertybsd.net/pub/LibertyBSD/snapshots/i386/cd78.iso" \
 	emulators/qemu/pkg/README 
 rep	"ftp.openbsd.org/pub/OpenBSD/snapshots/amd64/cd52.iso" \
-	"ftp.libertybsd.net/pub/LibertyBSD/snapshots/amd64/cd64.iso" \
+	"ftp.libertybsd.net/pub/LibertyBSD/snapshots/amd64/cd78.iso" \
 	emulators/qemu/pkg/README
 linedel "\$ ftp ftp://ftp.openbsd.org/pub/OpenBSD/snapshots/sparc/cd52.iso" \
 	emulators/qemu/pkg/README
-rep "install52.fs" "install64.fs" emulators/qemu/pkg/README
-rep "install52.iso" "install64.iso" emulators/qemu/pkg/README
+rep "install52.fs" "install78.fs" emulators/qemu/pkg/README
+rep "install52.iso" "install78.iso" emulators/qemu/pkg/README
 rep "OpenBSD" "LibertyBSD" emulators/qemu/pkg/README
 
 rep "ftp.openbsd.org" "ftp.libertybsd.net" \
