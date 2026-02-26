@@ -91,15 +91,22 @@ rep "kerninfo.sysname" "\"LibertyBSD\"" libexec/getty/main.c
 # Adding LBSD keys
 local_key="files/keys/libertybsd-"
 lbsd_key="etc/signify/libertybsd-"
+release_ver=78
 
-# Use the newest three key generations (previous/current/next release window).
-versions="$(ls ${local_key}*-base.pub 2>/dev/null \
-	| sed 's|.*/libertybsd-||; s|-base\.pub$||' \
-	| sort -nu \
-	| tail -3)"
+# Include previous/current/next release keys when present.
+versions=""
+for ver in $((release_ver - 1)) "$release_ver" $((release_ver + 1)); do
+	if test -f "${local_key}${ver}-base.pub"; then
+		if test -z "$versions"; then
+			versions="$ver"
+		else
+			versions="$versions $ver"
+		fi
+	fi
+done
 
 if test -z "$versions"; then
-	echo "No LibertyBSD base keys found under files/keys/"
+	echo "No LibertyBSD keys found for release window around ${release_ver}"
 	exit 1
 fi
 

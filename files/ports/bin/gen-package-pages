@@ -45,7 +45,8 @@ our $debug = 0;
 our $html;
 
 my @arches = qw(amd64);
-my $pkgpath = "/home/ftp/pub/OpenBSD/$osrev/packages";
+my $pkgpath = "/home/ftp/pub/LibertyBSD/$osrev/packages";
+$pkgpath = "/home/ftp/pub/OpenBSD/$osrev/packages" if (!-d $pkgpath);
 my $htmlbase = "html";
 
 mkdir($htmlbase);
