@@ -1,1 +1,4 @@
 *.swp
+*.sec
+files/keys/*.sec
+lbsd-keys/
