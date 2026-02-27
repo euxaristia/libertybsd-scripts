@@ -40,11 +40,11 @@ require_file "$KEY_DIR/libertybsd-${REL}-base.pub"
 require_file "$KEY_DIR/libertybsd-${REL}-pkg.pub"
 require_file "$KEY_DIR/libertybsd-${REL}-syspatch.pub"
 
-run signify -V -e -p "$KEY_DIR/libertybsd-${REL}-base.pub" \
+run signify -V -p "$KEY_DIR/libertybsd-${REL}-base.pub" \
 	-x "$BASE_DIR/SHA256.sig" -m "$BASE_DIR/SHA256"
-run signify -V -e -p "$KEY_DIR/libertybsd-${REL}-pkg.pub" \
+run signify -V -p "$KEY_DIR/libertybsd-${REL}-pkg.pub" \
 	-x "$PACKAGES_DIR/SHA256.sig" -m "$PACKAGES_DIR/SHA256"
-run signify -V -e -p "$KEY_DIR/libertybsd-${REL}-syspatch.pub" \
+run signify -V -p "$KEY_DIR/libertybsd-${REL}-syspatch.pub" \
 	-x "$SYSPATCH_DIR/SHA256.sig" -m "$SYSPATCH_DIR/SHA256"
 
 echo "all 7.8 signatures verify."
