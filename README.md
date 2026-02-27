@@ -111,11 +111,9 @@ BORING STUFF
 Send patches/issues to:
 </f/libertybsd> (raddle.me)
 <#libertybsd> (Freenode)
-<jadedctrl@teknik.io>
-<LibertyBSD/libertybsd-scripts> (NotABug)
+<jadedctrl@posteo.net>
 
 License is ISC (COPYING.txt)
-Author is Jaidyn Ann <jadedctrl@teknik.io>
-Some ports contributions by jmfgdef (Jimmybot),
+Author is Jaidyn Ann <jadedctrl@posteo.net>
+Some ports contributions by euxaristia,
 Some improvements by Einhard Leichtfuß.
-Source is at https://notabug.org/LibertyBSD/libertybsd-scripts
